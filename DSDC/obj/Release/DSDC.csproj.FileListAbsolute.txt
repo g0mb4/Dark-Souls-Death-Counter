@@ -1,0 +1,9 @@
+N:\prog\C#\Enyém\DSDC\DSDC\bin\Release\DSDC.exe.config
+N:\prog\C#\Enyém\DSDC\DSDC\bin\Release\DSDC.exe
+N:\prog\C#\Enyém\DSDC\DSDC\bin\Release\DSDC.pdb
+N:\prog\C#\Enyém\DSDC\DSDC\obj\Release\DSDC.Main.resources
+N:\prog\C#\Enyém\DSDC\DSDC\obj\Release\DSDC.Properties.Resources.resources
+N:\prog\C#\Enyém\DSDC\DSDC\obj\Release\DSDC.csproj.GenerateResource.Cache
+N:\prog\C#\Enyém\DSDC\DSDC\obj\Release\DSDC.csproj.CoreCompileInputs.cache
+N:\prog\C#\Enyém\DSDC\DSDC\obj\Release\DSDC.exe
+N:\prog\C#\Enyém\DSDC\DSDC\obj\Release\DSDC.pdb

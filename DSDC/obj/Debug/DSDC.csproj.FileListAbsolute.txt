@@ -1,0 +1,10 @@
+N:\prog\C#\Enyém\DSDC\DSDC\bin\Debug\DSDC.exe.config
+N:\prog\C#\Enyém\DSDC\DSDC\bin\Debug\DSDC.exe
+N:\prog\C#\Enyém\DSDC\DSDC\bin\Debug\DSDC.pdb
+N:\prog\C#\Enyém\DSDC\DSDC\obj\Debug\DSDC.csprojResolveAssemblyReference.cache
+N:\prog\C#\Enyém\DSDC\DSDC\obj\Debug\DSDC.Main.resources
+N:\prog\C#\Enyém\DSDC\DSDC\obj\Debug\DSDC.Properties.Resources.resources
+N:\prog\C#\Enyém\DSDC\DSDC\obj\Debug\DSDC.csproj.GenerateResource.Cache
+N:\prog\C#\Enyém\DSDC\DSDC\obj\Debug\DSDC.csproj.CoreCompileInputs.cache
+N:\prog\C#\Enyém\DSDC\DSDC\obj\Debug\DSDC.exe
+N:\prog\C#\Enyém\DSDC\DSDC\obj\Debug\DSDC.pdb
