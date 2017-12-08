@@ -7,3 +7,4 @@ N:\prog\C#\Enyém\DSDC\DSDC\obj\Release\DSDC.csproj.GenerateResource.Cache
 N:\prog\C#\Enyém\DSDC\DSDC\obj\Release\DSDC.csproj.CoreCompileInputs.cache
 N:\prog\C#\Enyém\DSDC\DSDC\obj\Release\DSDC.exe
 N:\prog\C#\Enyém\DSDC\DSDC\obj\Release\DSDC.pdb
+n:\prog\C#\Enyém\DSDC\DSDC\obj\Release\DSDC.csprojResolveAssemblyReference.cache

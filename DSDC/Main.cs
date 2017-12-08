@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
+using System.Security.Principal;
 
 namespace DSDC
 {
@@ -17,44 +18,56 @@ namespace DSDC
         private DSMiner dsm;
         int lastDeath = -1, currDeath = 0;
         string filePath;
-
+        bool isAdmin;
 
         public Main()
         {
             InitializeComponent();
 
-            txbDeaths.TextAlign = HorizontalAlignment.Center;
+            WindowsIdentity identity = WindowsIdentity.GetCurrent();
+            WindowsPrincipal principal = new WindowsPrincipal(identity);
+            isAdmin = principal.IsInRole(WindowsBuiltInRole.Administrator);
 
-            bool found = false;
-            for (int i = 0; i < 10; i++)
+            if (!isAdmin)
             {
-                try
-                {
-                    dsm = new DSMiner("DATA");
-                    found = true;
-                    break;
-                }
-                catch { }
-
-                Thread.Sleep(500);
-            }
-
-            if (!found)
-            {
-                MessageBox.Show("Dark Souls is not running.");
+                MessageBox.Show("Run this program 'as admin'");
                 Environment.Exit(1);
             }
 
+
+            txbDeaths.TextAlign = HorizontalAlignment.Center;
+
+            dsm = new DSMiner("DATA");
+              
             if(sfdFile.ShowDialog() == DialogResult.OK)
             {
                 filePath = sfdFile.FileName;
 
                 txbFile.Text = filePath;
-                
-                
             }
 
+            tStatus.Start();
             tUpdate.Start();
+
+        }
+
+        private void tStatus_Tick(object sender, EventArgs e)
+        {
+            if (dsm.isProcessRunning())
+            {
+                if (!dsm.isAttached())
+                {
+                    dsm.Attach();
+                    txbStatus.Text = "Running";
+                    txbStatus.ForeColor = Color.Green;
+                }
+            }
+            else
+            {
+                dsm.Detach();
+                txbStatus.Text = "NOT Running";
+                txbStatus.ForeColor = Color.Red;
+            }
         }
 
         private void tUpdate_Tick(object sender, EventArgs e)

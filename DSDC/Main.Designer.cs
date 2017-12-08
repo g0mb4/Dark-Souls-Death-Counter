@@ -35,6 +35,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txbFile = new System.Windows.Forms.TextBox();
             this.sfdFile = new System.Windows.Forms.SaveFileDialog();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txbStatus = new System.Windows.Forms.TextBox();
+            this.tStatus = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // txbDeaths
@@ -42,11 +45,11 @@
             this.txbDeaths.BackColor = System.Drawing.Color.Black;
             this.txbDeaths.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txbDeaths.ForeColor = System.Drawing.Color.Red;
-            this.txbDeaths.Location = new System.Drawing.Point(62, 12);
+            this.txbDeaths.Location = new System.Drawing.Point(176, 12);
             this.txbDeaths.Name = "txbDeaths";
             this.txbDeaths.ReadOnly = true;
             this.txbDeaths.Size = new System.Drawing.Size(51, 31);
-            this.txbDeaths.TabIndex = 0;
+            this.txbDeaths.TabIndex = 2;
             // 
             // tUpdate
             // 
@@ -56,7 +59,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 24);
+            this.label1.Location = new System.Drawing.Point(126, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 1;
@@ -80,19 +83,46 @@
             this.txbFile.Name = "txbFile";
             this.txbFile.ReadOnly = true;
             this.txbFile.Size = new System.Drawing.Size(341, 20);
-            this.txbFile.TabIndex = 3;
+            this.txbFile.TabIndex = 1;
             // 
             // sfdFile
             // 
             this.sfdFile.FileName = "DSDCout.txt";
             this.sfdFile.Filter = "Text files|*.txt|All files|*.*";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(12, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "DS Status:";
+            // 
+            // txbStatus
+            // 
+            this.txbStatus.BackColor = System.Drawing.Color.Black;
+            this.txbStatus.ForeColor = System.Drawing.Color.White;
+            this.txbStatus.Location = new System.Drawing.Point(76, 81);
+            this.txbStatus.Name = "txbStatus";
+            this.txbStatus.ReadOnly = true;
+            this.txbStatus.Size = new System.Drawing.Size(94, 20);
+            this.txbStatus.TabIndex = 0;
+            this.txbStatus.Text = "NOT running";
+            // 
+            // tStatus
+            // 
+            this.tStatus.Tick += new System.EventHandler(this.tStatus_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(397, 84);
+            this.ClientSize = new System.Drawing.Size(397, 106);
+            this.Controls.Add(this.txbStatus);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txbFile);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -113,6 +143,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txbFile;
         private System.Windows.Forms.SaveFileDialog sfdFile;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txbStatus;
+        private System.Windows.Forms.Timer tStatus;
     }
 }
 

@@ -13,10 +13,10 @@ namespace DSDC
         private IntPtr processHandle;
         private Process process;
         private string procName;
+        private bool attached = false;
 
         const int PROCESS_WM_READ = 0x0010;
 
-        //IntPtr baseOffset = new IntPtr(0x0B6F31F0);
         IntPtr baseOffset = new IntPtr(0x00FDAD30);
 
         const int DS_DEATHS_OFFS = 0x5C;
@@ -30,7 +30,10 @@ namespace DSDC
         public DSMiner(string exeName)
         {
             procName = exeName;
+        }
 
+        public void Attach()
+        {
             try
             {
                 process = Process.GetProcessesByName(procName)[0];
@@ -46,8 +49,19 @@ namespace DSDC
             {
                 throw new Exception("Cannot open Dark Souls.");
             }
+
+            attached = true;
         }
 
+        public void Detach()
+        {
+            attached = false;
+        }
+
+        public bool isAttached()
+        {
+            return attached;
+        }
 
         public int readDeaths()
         {
